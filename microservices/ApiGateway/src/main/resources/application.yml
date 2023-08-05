@@ -1,0 +1,48 @@
+server:
+  port: 9050
+
+
+
+
+spring:
+  application:
+    name: API-GATEWAY
+
+
+  main:
+    allow-circular-references: true
+
+
+
+
+
+  cloud:
+    gateway:
+      routes:
+        - id: AUTH-SERVICE
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/api/auth/**,/check
+
+
+
+
+
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:9000/eureka
+
+eureka:
+  instance:
+    prefer-ip-address: ${EUREKA_INSTANCE_PREFER-IP-ADDRESS}
+  client:
+    register-with-eureka: ${EUREKA_CLIENT_REGISTER-WITH-EUREKA}
+    fetch-registry: ${EUREKA_CLIENT_FETCH-REGISTRY}
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE}

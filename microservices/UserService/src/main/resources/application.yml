@@ -1,0 +1,76 @@
+#server:
+#  port: 8080
+#
+#
+#
+#
+#
+#
+#spring:
+#
+#
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/user
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#
+#
+#
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#
+#
+#
+#
+#  application:
+#    name: AUTH-SERVICE
+#
+#
+#
+#
+#
+#
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:9000/eureka
+#
+#
+#
+#
+
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME}
+
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL-AUTO}
+    show-sql: ${SPRING_JPA_SHOW-SQL}
+
+  application:
+    name: AUTH-SERVICE
+
+eureka:
+  instance:
+    prefer-ip-address: ${EUREKA_INSTANCE_PREFER-IP-ADDRESS}
+  client:
+    register-with-eureka: ${EUREKA_CLIENT_REGISTER-WITH-EUREKA}
+    fetch-registry: ${EUREKA_CLIENT_FETCH-REGISTRY}
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE}

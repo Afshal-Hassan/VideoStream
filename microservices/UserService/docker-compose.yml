@@ -1,0 +1,65 @@
+version: "3"
+
+services:
+  service-registry:
+    image: afshalhassan/service-registry-youtube:0.0.1.SNAPSHOT
+    container_name: service-registry
+    ports:
+      - "9000:9000"
+    networks:
+      - backend
+
+  dbservice:
+    image: mysql:8
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: user
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    networks:
+      - backend
+
+  api-gateway:
+    image: afshalhassan/api-gateway-youtube:latest
+    container_name: api-gateway
+    ports:
+      - "9050:9050"
+    environment:
+      - EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE=http://service-registry:9000/eureka
+      - EUREKA_INSTANCE_PREFER-IP-ADDRESS=true
+      - EUREKA_CLIENT_REGISTER-WITH-EUREKA=true
+      - EUREKA_CLIENT_FETCH-REGISTRY=true
+    networks:
+      - backend
+    depends_on:
+      - service-registry
+
+
+  auth-service:
+    image: afshalhassan/user-service-youtube:0.0.1.SNAPSHOT
+    container_name: auth-service
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/user
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_DATASOURCE_DRIVER-CLASS-NAME=com.mysql.cj.jdbc.Driver
+      - SPRING_JPA_HIBERNATE_DDL-AUTO=update
+      - SPRING_JPA_SHOW-SQL=true
+      - EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE=http://service-registry:9000/eureka
+      - EUREKA_INSTANCE_PREFER-IP-ADDRESS=true
+      - EUREKA_CLIENT_REGISTER-WITH-EUREKA=true
+      - EUREKA_CLIENT_FETCH-REGISTRY=true
+    networks:
+      - backend
+    depends_on:
+      - service-registry
+      - dbservice
+
+networks:
+  backend:
+    driver: bridge
