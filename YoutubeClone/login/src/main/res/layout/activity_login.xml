@@ -13,13 +13,14 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.35"
+            android:background="@drawable/login_bottom_curve"
             android:gravity="center">
 
 
         <ImageView
-                android:layout_width="132.5dp"
-                android:layout_height="152.5dp"
-                android:background="@drawable/youtube"/>
+                android:layout_width="142.5dp"
+                android:layout_height="142.5dp"
+                android:background="@drawable/play_button"/>
 
     </LinearLayout>
 
@@ -33,6 +34,17 @@
             android:paddingRight="60dp">
 
 
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="LOGIN"
+                android:textColor="@color/black"
+                android:textSize="50dp"
+                android:fontFamily="@font/youtubesansbold"
+                android:layout_marginTop="30dp"/>
+
+
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -43,21 +55,29 @@
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
+                    android:background="@drawable/edit_text_border"
+                    android:drawableLeft="@drawable/email_icon"
+                    android:drawablePadding="10dp"
                     android:text="Email"
                     android:textColor="@color/black"
                     android:textSize="19dp"
                     android:fontFamily="@font/youtubesansmedium"
-                    android:layout_marginBottom="30dp"/>
+                    android:layout_marginBottom="30dp"
+                    android:paddingLeft="10dp"/>
 
 
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
+                    android:background="@drawable/edit_text_border"
+                    android:drawableLeft="@drawable/password_icon"
+                    android:drawablePadding="10dp"
                     android:text="Password"
                     android:textColor="@color/black"
                     android:textSize="19dp"
                     android:fontFamily="@font/youtubesansmedium"
-                    android:layout_marginBottom="30dp"/>
+                    android:layout_marginBottom="30dp"
+                    android:paddingLeft="10dp"/>
 
 
             <Button
