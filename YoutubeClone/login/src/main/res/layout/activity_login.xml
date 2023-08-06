@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical"
+              tools:context=".LoginActivity">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.35"
+            android:gravity="center">
+
+
+        <ImageView
+                android:layout_width="132.5dp"
+                android:layout_height="152.5dp"
+                android:background="@drawable/youtube"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.65"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp">
+
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true">
+
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Email"
+                    android:textColor="@color/black"
+                    android:textSize="19dp"
+                    android:fontFamily="@font/youtubesansmedium"
+                    android:layout_marginBottom="30dp"/>
+
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Password"
+                    android:textColor="@color/black"
+                    android:textSize="19dp"
+                    android:fontFamily="@font/youtubesansmedium"
+                    android:layout_marginBottom="30dp"/>
+
+
+            <Button
+                    android:layout_width="145dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/login_button_bg"
+                    android:elevation="15dp"
+                    android:text="Login"
+                    android:textColor="@color/white"
+                    android:textSize="19dp"
+                    android:fontFamily="@font/youtubesansmedium"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:layout_alignParentBottom="true"
+                      android:layout_marginBottom="40dp">
+
+
+            <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/facebook"/>
+
+            <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/apple"/>
+
+            <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/google"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
