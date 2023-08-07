@@ -13,14 +13,13 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.35"
-            android:background="@drawable/login_bottom_curve"
             android:gravity="center">
 
 
         <ImageView
-                android:layout_width="142.5dp"
-                android:layout_height="142.5dp"
-                android:background="@drawable/play_button"/>
+                android:layout_width="152.5dp"
+                android:layout_height="172.5dp"
+                android:src="@drawable/youtube"/>
 
     </LinearLayout>
 
@@ -30,8 +29,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.65"
-            android:paddingLeft="60dp"
-            android:paddingRight="60dp">
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp">
 
 
         <TextView
@@ -40,9 +39,9 @@
                 android:layout_centerHorizontal="true"
                 android:text="LOGIN"
                 android:textColor="@color/black"
-                android:textSize="50dp"
+                android:textSize="45dp"
                 android:fontFamily="@font/youtubesansbold"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="25dp"/>
 
 
         <LinearLayout
@@ -58,12 +57,15 @@
                     android:background="@drawable/edit_text_border"
                     android:drawableLeft="@drawable/email_icon"
                     android:drawablePadding="10dp"
-                    android:text="Email"
+                    android:inputType="textEmailAddress"
+                    android:hint="Email"
                     android:textColor="@color/black"
                     android:textSize="19dp"
                     android:fontFamily="@font/youtubesansmedium"
                     android:layout_marginBottom="30dp"
-                    android:paddingLeft="10dp"/>
+                    android:paddingLeft="10dp"
+                    android:elevation="2dp"
+            />
 
 
             <EditText
@@ -72,24 +74,26 @@
                     android:background="@drawable/edit_text_border"
                     android:drawableLeft="@drawable/password_icon"
                     android:drawablePadding="10dp"
-                    android:text="Password"
+                    android:inputType="textPassword"
+                    android:hint="Password"
                     android:textColor="@color/black"
                     android:textSize="19dp"
                     android:fontFamily="@font/youtubesansmedium"
                     android:layout_marginBottom="30dp"
-                    android:paddingLeft="10dp"/>
+                    android:paddingLeft="10dp"
+                    android:elevation="2dp"/>
 
 
             <Button
-                    android:layout_width="145dp"
-                    android:layout_height="52dp"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
                     android:background="@drawable/login_button_bg"
-                    android:elevation="15dp"
                     android:text="Login"
                     android:textColor="@color/white"
                     android:textSize="19dp"
-                    android:fontFamily="@font/youtubesansmedium"/>
+                    android:fontFamily="@font/youtubesansmedium"
+                    android:layout_marginBottom="2dp"
+                    android:elevation="25dp"/>
 
 
         </LinearLayout>

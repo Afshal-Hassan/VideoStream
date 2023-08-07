@@ -27,7 +27,8 @@
         </activity>
 
 
-        <activity android:name="com.youtube.login.LoginActivity"/>
+        <activity android:name="com.youtube.login.LoginActivity"
+                  android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
