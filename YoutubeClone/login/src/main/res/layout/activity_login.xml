@@ -1,132 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/white"
-              android:orientation="vertical"
-              tools:context=".LoginActivity">
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.35"
-            android:gravity="center">
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            tools:context=".LoginActivity">
 
 
-        <ImageView
-                android:layout_width="152.5dp"
-                android:layout_height="172.5dp"
-                android:src="@drawable/youtube"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.35"
+                android:gravity="center">
+
+
+            <ImageView
+                    android:layout_width="152.5dp"
+                    android:layout_height="172.5dp"
+                    android:src="@drawable/youtube"/>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.65"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp">
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="LOGIN"
+                    android:textColor="@color/black"
+                    android:textSize="45dp"
+                    android:fontFamily="@font/youtubesansbold"
+                    android:layout_marginTop="25dp"/>
+
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+
+
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@drawable/edit_text_border"
+                        android:drawableLeft="@drawable/email_icon"
+                        android:drawablePadding="10dp"
+                        android:inputType="textEmailAddress"
+                        android:hint="Email"
+                        android:textColor="@color/black"
+                        android:textSize="19dp"
+                        android:fontFamily="@font/youtubesansmedium"
+                        android:layout_marginBottom="30dp"
+                        android:paddingLeft="10dp"
+                        android:elevation="2dp"
+                />
+
+
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@drawable/edit_text_border"
+                        android:drawableLeft="@drawable/password_icon"
+                        android:drawablePadding="10dp"
+                        android:inputType="textPassword"
+                        android:hint="Password"
+                        android:textColor="@color/black"
+                        android:textSize="19dp"
+                        android:fontFamily="@font/youtubesansmedium"
+                        android:layout_marginBottom="30dp"
+                        android:paddingLeft="10dp"
+                        android:elevation="2dp"/>
+
+
+                <Button
+                        android:id="@+id/loginButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@drawable/login_button_bg"
+                        android:text="Login"
+                        android:textColor="@color/white"
+                        android:textSize="19dp"
+                        android:fontFamily="@font/youtubesansmedium"
+                        android:layout_marginBottom="2dp"
+                        android:elevation="25dp"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:gravity="center"
+                          android:layout_alignParentBottom="true"
+                          android:layout_marginBottom="40dp">
+
+
+                <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/facebook"/>
+
+                <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/apple"/>
+
+                <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/google"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
 
     </LinearLayout>
 
 
-    <RelativeLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.65"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp">
-
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="LOGIN"
-                android:textColor="@color/black"
-                android:textSize="45dp"
-                android:fontFamily="@font/youtubesansbold"
-                android:layout_marginTop="25dp"/>
-
-
-        <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true">
-
-
-            <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@drawable/edit_text_border"
-                    android:drawableLeft="@drawable/email_icon"
-                    android:drawablePadding="10dp"
-                    android:inputType="textEmailAddress"
-                    android:hint="Email"
-                    android:textColor="@color/black"
-                    android:textSize="19dp"
-                    android:fontFamily="@font/youtubesansmedium"
-                    android:layout_marginBottom="30dp"
-                    android:paddingLeft="10dp"
-                    android:elevation="2dp"
-            />
-
-
-            <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@drawable/edit_text_border"
-                    android:drawableLeft="@drawable/password_icon"
-                    android:drawablePadding="10dp"
-                    android:inputType="textPassword"
-                    android:hint="Password"
-                    android:textColor="@color/black"
-                    android:textSize="19dp"
-                    android:fontFamily="@font/youtubesansmedium"
-                    android:layout_marginBottom="30dp"
-                    android:paddingLeft="10dp"
-                    android:elevation="2dp"/>
-
-
-            <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@drawable/login_button_bg"
-                    android:text="Login"
-                    android:textColor="@color/white"
-                    android:textSize="19dp"
-                    android:fontFamily="@font/youtubesansmedium"
-                    android:layout_marginBottom="2dp"
-                    android:elevation="25dp"/>
-
-
-        </LinearLayout>
-
-
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:gravity="center"
-                      android:layout_alignParentBottom="true"
-                      android:layout_marginBottom="40dp">
-
-
-            <ImageView
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/facebook"/>
-
-            <ImageView
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/apple"/>
-
-            <ImageView
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/google"/>
-
-        </LinearLayout>
-
-
-    </RelativeLayout>
-
-</LinearLayout>
+</layout>

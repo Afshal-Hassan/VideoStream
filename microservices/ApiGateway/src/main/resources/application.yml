@@ -40,9 +40,9 @@ spring:
 
 eureka:
   instance:
-    prefer-ip-address: ${EUREKA_INSTANCE_PREFER-IP-ADDRESS}
+    prefer-ip-address: ${EUREKA_INSTANCE_PREFER-IP-ADDRESS:true}
   client:
-    register-with-eureka: ${EUREKA_CLIENT_REGISTER-WITH-EUREKA}
-    fetch-registry: ${EUREKA_CLIENT_FETCH-REGISTRY}
+    register-with-eureka: ${EUREKA_CLIENT_REGISTER-WITH-EUREKA:true}
+    fetch-registry: ${EUREKA_CLIENT_FETCH-REGISTRY:true}
     service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE}
+      defaultZone: ${EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE:http://localhost:9000/eureka}

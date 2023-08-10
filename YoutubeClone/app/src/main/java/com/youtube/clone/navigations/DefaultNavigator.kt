@@ -11,6 +11,10 @@ class DefaultNavigator : Navigator.Provider {
             Activities.LoginActivity -> {
                 GoToLoginActivity
             }
+
+            Activities.SplashActivity -> {
+                GoToLoginActivity
+            }
         }
     }
 }

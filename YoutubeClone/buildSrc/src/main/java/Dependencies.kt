@@ -29,6 +29,8 @@ object Versions {
     const val swipeRefresh = "1.1.0"
 
     const val lottieAnimations = "3.4.2"
+
+    const val koinVersion = "2.2.1"
 }
 
 object Deps {
@@ -72,8 +74,12 @@ object Coroutines {
 object CoroutinesLifecycleScope {
     const val lifecycleViewModel =
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.coroutineLifecycleScope}"
+        const val lifecycleLiveData =
+        "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.coroutineLifecycleScope}"
     const val lifeCycleRuntime =
         "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.coroutineLifecycleScope}"
+
+
 }
 
 object Glide {
