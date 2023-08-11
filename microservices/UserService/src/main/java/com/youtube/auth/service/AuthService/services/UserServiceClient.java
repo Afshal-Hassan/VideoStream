@@ -17,12 +17,10 @@ public class UserServiceClient implements UserService, UserDetailsService {
     @Autowired
     private UserRepo repo;
 
-
     @Override
     public void saveUser(UserData userData) {
         repo.save(UserMapper.mapToEntity(userData));
     }
-
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

@@ -1,0 +1,58 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.9'
+	id 'io.spring.dependency-management' version '1.1.2'
+}
+
+group = 'com.youtube'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "2022.0.4")
+}
+
+dependencies {
+
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+ 	implementation 'org.springframework.boot:spring-boot-starter-graphql'
+ 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+
+
+
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+ 	testImplementation 'org.springframework:spring-webflux'
+  	testImplementation 'org.springframework.graphql:spring-graphql-test'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

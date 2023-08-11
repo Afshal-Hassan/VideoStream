@@ -1,0 +1,8 @@
+#import "./video_data.graphqls"
+
+
+
+type GenericResponse {
+  message: String!
+  data: VideoData
+}

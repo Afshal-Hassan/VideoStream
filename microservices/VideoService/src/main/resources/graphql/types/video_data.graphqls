@@ -1,0 +1,5 @@
+type VideoData {
+  title: String  
+  url: String  
+  uploaderId: Int  
+}

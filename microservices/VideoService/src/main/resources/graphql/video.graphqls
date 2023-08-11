@@ -1,0 +1,24 @@
+#import "./types/generic_response.graphqls"
+#import "./inputs/video_data_input.graphqls"
+
+
+
+
+type Mutation {
+  saveVideo(input: VideoDataInput!): GenericResponse!
+} 
+
+
+
+
+type Query {
+  dummyQuery: String
+}
+
+
+
+
+schema {
+  query: Query
+  mutation: Mutation
+}

@@ -1,0 +1,55 @@
+server:
+  port: 8081
+
+
+
+
+
+spring:
+
+
+
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/video}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:root}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME:com.mysql.cj.jdbc.Driver}
+
+
+
+
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL-AUTO:update}
+    show-sql: ${SPRING_JPA_SHOW-SQL:true}
+ 
+
+
+
+  application:
+    name: VIDEO-SERVICE
+ 
+
+
+
+eureka:
+ 
+  instance: 
+    prefer-ip-address: ${EUREKA_INSTANCE_PREFER-IP-ADDRESS:true} 
+  client: 
+    register-with-eureka: ${EUREKA_CLIENT_REGISTER-WITH-EUREKA:true}
+    fetch-registry: ${EUREKA_CLIENT_FETCH-REGISTRY:true}
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE:http://localhost:9000/eureka}
+
+
+
+
+graphql:
+  servlet:
+    mapping: /video
+
+
+
+
