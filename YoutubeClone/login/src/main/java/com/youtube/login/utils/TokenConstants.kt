@@ -1,4 +1,4 @@
-package com.youtube.login
+package com.youtube.login.utils
 
 object TokenConstants {
 

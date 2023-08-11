@@ -30,7 +30,9 @@ object Versions {
 
     const val lottieAnimations = "3.4.2"
 
-    const val koinVersion = "2.2.1"
+    const val spinKitVersion = "1.4.0"
+
+
 }
 
 object Deps {
@@ -109,4 +111,9 @@ object CircularProgressBar {
 
 object LottieAnimations {
     const val lottieAnimations = "com.airbnb.android:lottie:${Versions.lottieAnimations}"
+}
+
+
+object SpinKitView {
+    const val progressBar = "com.github.ybq:Android-SpinKit:${Versions.spinKitVersion}"
 }

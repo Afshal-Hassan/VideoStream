@@ -2,7 +2,7 @@ package com.youtube.login.navigation
 
 import android.app.Activity
 import com.youtube.common_utils.Navigator
-import com.youtube.login.LoginActivity
+import com.youtube.login.screens.LoginActivity
 
 
 object GoToLoginActivity : Navigator {

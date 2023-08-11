@@ -1,10 +1,10 @@
 package com.youtube.login.utils
 
 import android.content.Context
-import com.youtube.login.TokenConstants
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class TokenManager @Inject constructor(context: Context) {
+class TokenManager @Inject constructor(@ApplicationContext context: Context) {
 
 
     private var prefs = context.getSharedPreferences(TokenConstants.PREFS_TOKEN_FILE, Context.MODE_PRIVATE)

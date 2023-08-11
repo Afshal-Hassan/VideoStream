@@ -33,7 +33,7 @@ object CustomRetrofit {
 
     @Singleton
     @Provides
-    fun providesUserService(retrofit: Retrofit): LoginService {
+    fun providesLoginService(retrofit: Retrofit): LoginService {
         return retrofit.create(LoginService::class.java)
     }
 }

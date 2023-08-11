@@ -1,10 +1,13 @@
-package com.youtube.login
+package com.youtube.login.screens
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.youtube.login.databinding.ActivityLoginBinding
@@ -38,9 +41,6 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        observeLogin()
-
-
         binding.loginButton.setOnClickListener {
             loginViewModel.login(
                 UserData(
@@ -56,17 +56,32 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-    fun observeLogin() {
+    override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
+        val root = super.onCreateView(name, context, attrs)
+
+        observeLogin()
+
+        return root
+
+    }
+
+
+    private fun observeLogin() {
         loginViewModel.userLiveData.observe(this, Observer {
+            binding.loginButton.isEnabled = true
             when (it) {
                 is NetworkResult.Success -> {
-                    Log.d("Login","Success")
+                    Log.d("Login", "Success")
                 }
 
                 is NetworkResult.Error -> {
-                    Log.d("Login","Fail")
+                    binding.errorText.text = it.message
+                    binding.errorText.visibility = View.VISIBLE
                 }
-                is NetworkResult.Loading -> {}
+
+                is NetworkResult.Loading -> {
+                    binding.loginButton.isEnabled = false
+                }
             }
         })
     }

@@ -30,7 +30,7 @@
         </activity>
 
 
-        <activity android:name="com.youtube.login.LoginActivity"
+        <activity android:name="com.youtube.login.screens.LoginActivity"
                   android:screenOrientation="portrait"/>
     </application>
 

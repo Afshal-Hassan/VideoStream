@@ -10,7 +10,7 @@
             android:layout_height="match_parent"
             android:background="@color/white"
             android:orientation="vertical"
-            tools:context=".LoginActivity">
+            tools:context=".screens.LoginActivity">
 
 
         <LinearLayout
@@ -93,12 +93,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
                         android:background="@drawable/login_button_bg"
+                        android:gravity="center"
                         android:text="Login"
                         android:textColor="@color/white"
                         android:textSize="19dp"
                         android:fontFamily="@font/youtubesansmedium"
-                        android:layout_marginBottom="2dp"
+                        android:layout_marginBottom="5dp"
                         android:elevation="25dp"/>
+
+
+                <TextView
+                        android:id="@+id/errorText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Bad Credentials"
+                        android:textColor="@color/youtube_red"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/youtubesansmedium"
+                        android:layout_marginBottom="5dp"
+                        android:visibility="invisible"/>
 
 
             </LinearLayout>
