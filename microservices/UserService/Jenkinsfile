@@ -29,8 +29,15 @@ pipeline {
 
     post {
             success {
-                // You can add any post-deployment steps or notifications here
+
+                // Send Email
                 echo 'Deployment successful!'
+                emailext(
+                subject: 'Deployment Successful',
+                body: 'The Jenkins Pipeline has completed successfully.',
+                to: 'afshalhassan7@gmail.com',  
+                attachLog: true  
+                )
             }
             failure {
                 // Handle deployment failures here
