@@ -8,6 +8,15 @@ pipeline {
 
     stages {
 
+
+        stage('Checkout') {
+            steps {
+                // Check out your Spring Boot project from version control (e.g., Git)
+                checkout scm
+            }
+        }
+        
+
         stage('SonarCloud Analysis') {
             steps {
                 script {
