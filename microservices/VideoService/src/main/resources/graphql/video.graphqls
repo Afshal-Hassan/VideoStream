@@ -5,7 +5,7 @@
 
 
 type Mutation {
-  saveVideo(input: VideoDataInput!): GenericResponse!
+  save(input: VideoDataInput!): GenericResponse!
 } 
 
 

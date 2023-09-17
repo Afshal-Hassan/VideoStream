@@ -1,5 +1,5 @@
 input VideoDataInput {
   title: String! 
-  url: String! 
+  fileName: String! 
   uploaderId: Int! 
 } 

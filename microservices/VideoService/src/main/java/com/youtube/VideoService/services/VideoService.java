@@ -1,14 +1,21 @@
 package com.youtube.VideoService.services;
 
 
+import com.youtube.VideoService.payloads.graphql_domains.outputs.VideoData;
+import org.springframework.web.multipart.MultipartFile;
+import com.youtube.VideoService.payloads.graphql_domains.inputs.VideoDataInput;
+import reactor.core.publisher.Mono;
 
-import com.youtube.VideoService.payloads.inputs.VideoDataInput;
-
+import java.io.IOException;
 
 
 public interface VideoService {
 
 
-    void saveVideo(VideoDataInput input);
-    
+    VideoData saveVideo(VideoDataInput input);
+
+    String uploadFile(Long videoId, MultipartFile file) throws IOException;
+
+    Mono streamVideo(String fileName);
+
 }

@@ -8,8 +8,6 @@ server:
 spring:
 
 
-
-
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/video}
     username: ${SPRING_DATASOURCE_USERNAME:root}
@@ -19,25 +17,55 @@ spring:
 
 
 
+
   jpa:
     hibernate:
       ddl-auto: ${SPRING_JPA_HIBERNATE_DDL-AUTO:update}
     show-sql: ${SPRING_JPA_SHOW-SQL:true}
- 
+
+
 
 
 
   application:
     name: VIDEO-SERVICE
- 
+
+
+
+
+
+  graphql:
+    path: /api/video
+
+
+
+
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+
+
+
+
+
+  web:
+    resources:
+      static-locations: file:C:/YoutubeClone/videos
+
+
+
+
+
 
 
 
 eureka:
- 
-  instance: 
-    prefer-ip-address: ${EUREKA_INSTANCE_PREFER-IP-ADDRESS:true} 
-  client: 
+
+  instance:
+    prefer-ip-address: ${EUREKA_INSTANCE_PREFER-IP-ADDRESS:true}
+  client:
     register-with-eureka: ${EUREKA_CLIENT_REGISTER-WITH-EUREKA:true}
     fetch-registry: ${EUREKA_CLIENT_FETCH-REGISTRY:true}
     service-url:
@@ -46,10 +74,15 @@ eureka:
 
 
 
-graphql:
-  servlet:
-    mapping: /video
 
 
+
+
+videos:
+  path: static/videos
+
+
+directory:
+  path: C:/YoutubeClone/videos
 
 

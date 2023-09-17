@@ -2,7 +2,18 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.0.9'
     id 'io.spring.dependency-management' version '1.1.2'
+    id "org.sonarqube" version "4.3.1.3277"
 }
+
+
+sonar {
+    properties {
+        property "sonar.projectKey", "Afshal-Hassan_VideoStream"
+        property "sonar.organization", "afshal1"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
 
 group = 'com.youtube.user.service'
 version = '0.0.1-SNAPSHOT'
@@ -61,6 +72,6 @@ tasks.named('test') {
 }
 
 
-bootBuildImage{
+bootBuildImage {
     imageName = "afshalhassan/user-service-youtube"
 }

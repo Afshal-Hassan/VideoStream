@@ -1,0 +1,5 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Χ³ϋ
+i
+java:S2259""NA "NullPointerException" could be thrown; "originalFilename" is nullable here.(Γϊόνόÿÿÿÿ
+Q	java:S125/"<This block of commented-out lines of code should be removed.(ϊ€™χ

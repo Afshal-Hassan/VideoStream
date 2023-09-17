@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    environment {
+        SONAR_SCANNER_HOME = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+        SONAR_TOKEN = "3aebdfa2305f597ecbf8f85126333461d273673e"
+    }
+
+    stages {
+
+        stage('SonarCloud Analysis') {
+            steps {
+                script {
+                    // Set SonarQube properties
+                    withSonarQubeEnv('SonarCloud') {
+                        sh """
+                        ${SONAR_SCANNER_HOME}/bin/sonar-scanner \
+                        -Dsonar.projectKey=Afshal-Hassan_VideoStream \
+                        -Dsonar.organization=afshal1 \
+                        -Dsonar.host.url=https://sonarcloud.io
+                        -Dsonar.login=${SONAR_TOKEN}
+                        """
+                    }
+                }
+            }
+        }
+    }
+
+
+    post {
+            success {
+                // You can add any post-deployment steps or notifications here
+                echo 'Deployment successful!'
+            }
+            failure {
+                // Handle deployment failures here
+                echo 'Deployment failed!'
+            }
+    }
+}

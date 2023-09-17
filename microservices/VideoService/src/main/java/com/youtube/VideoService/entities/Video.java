@@ -37,8 +37,8 @@ public class Video {
     private String title;
 
 
-    @Column(name = "url", nullable = false)
-    private String url;
+    @Column(name = "file_name")
+    private String fileName;
 
 
     @Column(name = "uploaded_at", nullable = false)
