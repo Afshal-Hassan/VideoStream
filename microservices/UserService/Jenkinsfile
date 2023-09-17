@@ -17,8 +17,8 @@ pipeline {
                 dir('microservices/UserService') {
                     script { 
 
-                        // Run Gradle with Sonar analysis 
-                        bat './gradlew sonarqube -Dsonar.projectKey=Afshal-Hassan_VideoStream -Dsonar.organization=afshal1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=3aebdfa2305f597ecbf8f85126333461d273673e'
+                        // Run Gradle with Sonar analysis (can use login instead of token)
+                        bat './gradlew sonarqube -Dsonar.projectKey=Afshal-Hassan_VideoStream -Dsonar.organization=afshal1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=3aebdfa2305f597ecbf8f85126333461d273673e'
                     }
                 }
                 
@@ -35,7 +35,8 @@ pipeline {
                 emailext(
                 subject: 'Deployment Successful',
                 body: 'The Jenkins Pipeline has completed successfully.',
-                to: 'afshalhassan7@gmail.com',  
+                to: 'afshalhassan7@gmail.com',
+                from: 'afshalhassan7@gmail.com',  
                 attachLog: true  
                 )
             }
