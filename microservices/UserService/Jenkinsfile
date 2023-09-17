@@ -18,7 +18,7 @@ pipeline {
                     script { 
 
                         // Run Gradle with Sonar analysis 
-                        bat './gradlew sonar -Dsonar.projectKey=Afshal-Hassan_VideoStream -Dsonar.organization=afshal1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=3aebdfa2305f597ecbf8f85126333461d273673e'
+                        bat './gradlew sonarqube -Dsonar.projectKey=Afshal-Hassan_VideoStream -Dsonar.organization=afshal1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=3aebdfa2305f597ecbf8f85126333461d273673e'
                     }
                 }
                 
