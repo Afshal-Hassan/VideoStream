@@ -2,35 +2,27 @@ pipeline {
     agent any
 
     environment {
-        SONAR_SCANNER_HOME = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
         SONAR_TOKEN = "3aebdfa2305f597ecbf8f85126333461d273673e"
     }
 
-    stages {
-
-
-        stage('Checkout') {
-            steps {
-                // Check out your Spring Boot project from version control (e.g., Git)
-                checkout scm
-            }
-        }
+    stages { 
         
 
         stage('SonarCloud Analysis') {
-            steps {
-                script {
-                    // Set SonarQube properties
-                    withSonarQubeEnv('SonarCloud') {
-                        sh """
-                        ${SONAR_SCANNER_HOME}/bin/sonar-scanner \
-                        -Dsonar.projectKey=Afshal-Hassan_VideoStream \
-                        -Dsonar.organization=afshal1 \
-                        -Dsonar.host.url=https://sonarcloud.io
-                        -Dsonar.login=${SONAR_TOKEN}
-                        """
+            steps { 
+
+
+                // Change directory to the UserService project
+
+                dir('microservices/UserService') {
+                    script { 
+
+                        // Run Gradle with SonarQube analysis
+
+                        sh './gradlew sonarqube -Dsonar.projectKey=Afshal-Hassan_VideoStream -Dsonar.organization=afshal1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=99b8147a4f5d12b75dbb6a92d7f1afa16c7fb3bd'
                     }
                 }
+                
             }
         }
     }
