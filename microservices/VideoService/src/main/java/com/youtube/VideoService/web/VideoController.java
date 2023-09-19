@@ -40,7 +40,7 @@ public class VideoController {
      */
     @MutationMapping("save")
     public GenericResponse saveVideo(@Valid @Argument VideoDataInput input) {
-        Mono<VideoData> result = videoService.saveVideo(Mono.just( input));
+        Mono<VideoData> result = videoService.saveVideo(Mono.just(input));
         return new GenericResponse
                 (
                         "Video has been saved successfully",
@@ -74,7 +74,7 @@ public class VideoController {
      *
      * @param fileName to find video by it's name, with type {@link String} ,
      * @return the mono with resource {@link Mono<Resource>}, with the Http status
-     * {@code 200 (Ok)}.  ,
+     * {@code 200 (Ok)}.
      */
     @GetMapping("/stream/{fileName}")
     public Mono<Resource> streamVideo(@PathVariable("fileName") String fileName) {

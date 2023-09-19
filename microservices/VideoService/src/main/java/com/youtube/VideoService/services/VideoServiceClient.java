@@ -33,7 +33,7 @@ public class VideoServiceClient implements VideoService {
         return input
                 .map(VideoMapper::mapToEntity)
                 .flatMap(entity -> repo.save(entity))
-                .flatMap(savedEntity -> Mono.just(VideoMapper.mapToData(savedEntity)));
+                .flatMap(video -> Mono.just(VideoMapper.mapToData(video)));
     }
 
 
@@ -41,7 +41,9 @@ public class VideoServiceClient implements VideoService {
     public String uploadFile(Long videoId, MultipartFile file) throws IOException {
         repo
                 .findById(videoId)
-                .switchIfEmpty(Mono.error(new NotFoundException("Video not found by id: " + videoId)));
+                .switchIfEmpty(
+                        Mono.error(new NotFoundException("Video not found by id: " + videoId))
+                );
 
         String fileName = videoProcessor.uploadVideo(file);
         repo.updateFileNameOfVideoById(videoId, fileName);
