@@ -40,7 +40,7 @@ public class VideoController {
      */
     @MutationMapping("save")
     public GenericResponse saveVideo(@Valid @Argument VideoDataInput input) {
-        VideoData result = videoService.saveVideo(input);
+        Mono<VideoData> result = videoService.saveVideo(Mono.just( input));
         return new GenericResponse
                 (
                         "Video has been saved successfully",
