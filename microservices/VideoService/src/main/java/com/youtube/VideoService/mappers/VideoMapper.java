@@ -6,6 +6,8 @@ import com.youtube.VideoService.payloads.graphql_domains.inputs.VideoDataInput;
 import com.youtube.VideoService.payloads.graphql_domains.outputs.VideoData;
 import com.youtube.VideoService.utils.UTCDateTimeUtils;
 
+import java.util.UUID;
+
 
 public final class VideoMapper {
 
@@ -17,6 +19,7 @@ public final class VideoMapper {
 
     public static Video mapToEntity(VideoDataInput input) {
         Video video = new Video();
+        video.setId(UUID.randomUUID().toString());
         video.setTitle(input.title());
         video.setUploadedAt(UTCDateTimeUtils.utcTimeNow());
         video.setUploaderId(input.uploaderId());

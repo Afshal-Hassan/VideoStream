@@ -1,52 +1,50 @@
 package com.youtube.VideoService.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
- 
 
 
 
-@Entity
-@Table(name = "videos") 
+
+@Table(name = "videos")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Video {
+public class Video implements Serializable {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    @Column("id")
+    private String id;
 
 
-    @Column(name = "title",length = 200, nullable = false)
+    @Column("title")
     private String title;
 
 
-    @Column(name = "file_name")
+    @Column("file_name")
     private String fileName;
 
 
-    @Column(name = "uploaded_at", nullable = false)
+    @Column("uploaded_at")
     private LocalDateTime uploadedAt;
 
 
-    @Column(name = "uploader_id", nullable = false)
+    @Column("uploader_id")
     private Long uploaderId;
-    
-    
+
+
 }

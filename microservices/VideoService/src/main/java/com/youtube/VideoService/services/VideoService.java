@@ -13,7 +13,7 @@ public interface VideoService {
 
     Mono saveVideo(Mono<VideoDataInput> input);
 
-    String uploadFile(Long videoId, MultipartFile file) throws IOException;
+    Mono uploadFile(String videoId, MultipartFile file) throws IOException;
 
     Mono streamVideo(String fileName);
 

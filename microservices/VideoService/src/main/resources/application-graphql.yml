@@ -1,0 +1,4 @@
+spring:
+
+  graphql:
+    path: /api/video

@@ -4,7 +4,6 @@ package com.youtube.VideoService.web;
 import java.io.IOException;
 
 
-import com.youtube.VideoService.payloads.graphql_domains.outputs.VideoData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -35,16 +34,14 @@ public class VideoController {
      *
      * @param input to store video details, with type {@link VideoDataInput} ,
      *              validatng the argument video input , with {@link Argument}  , used for graphql validation,
-     * @return the generic response {@link GenericResponse}, with the Http status
-     * {@code 200 (Ok)}.  ,
+     * @return the mono,  {@link Mono} with the generic response {@link GenericResponse},
+     * with the Http status {@code 200 (Ok)}.
      */
     @MutationMapping("save")
-    public GenericResponse saveVideo(@Valid @Argument VideoDataInput input) {
-        Mono<VideoData> result = videoService.saveVideo(Mono.just(input));
-        return new GenericResponse
-                (
-                        "Video has been saved successfully",
-                        result
+    public Mono saveVideo(@Valid @Argument VideoDataInput input) {
+        return videoService.saveVideo(Mono.just(input))
+                .map(result ->
+                        new GenericResponse("Video details has been saved successfully", result)
                 );
     }
 
@@ -54,17 +51,15 @@ public class VideoController {
      *
      * @param videoId to find video by it's id, with type {@link Long} ,
      * @param file    to upload file in a specified path, with type {@link MultipartFile}
-     * @return the generic response {@link GenericResponse}, with the Http status
-     * {@code 201 (Created)}.  ,
+     * @return the mono,  {@link Mono} with the generic response {@link GenericResponse},
+     * with the Https status {@code 201 (Created)}.  ,
      */
     @ResponseStatus(HttpStatus.CREATED)
     @PutMapping("/update/{videoId}")
-    public GenericResponse uploadFile(@PathVariable("videoId") Long videoId, @RequestParam("file") MultipartFile file) throws IOException {
-        String result = videoService.uploadFile(videoId, file);
-        return new GenericResponse
-                (
-                        "Video has been saved successfully",
-                        result
+    public Mono uploadFile(@PathVariable("videoId") String videoId, @RequestParam("file") MultipartFile file) throws IOException {
+        return videoService.uploadFile(videoId, file)
+                .map(result ->
+                        new GenericResponse("Video has been saved successfully", result)
                 );
     }
 

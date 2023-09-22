@@ -155,4 +155,26 @@ public class ExceptionResponseHandler extends ResponseEntityExceptionHandler {
         ex.printStackTrace();
         return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
+
+
+    /**
+     * {@code Rest Controller Exception } : Handle internal server exception.
+     *
+     * @param ex      to handle exception, with type {@link InternalServerException} ,
+     * @param headers to handle http headers, with type {@link HttpHeaders},
+     * @param status  to handle http status code, with type {@link HttpStatusCode}
+     * @param request to handle web request, with type {@link WebRequest} ,
+     * @return the {@link ResponseEntity}, with the Http status {@code 500 (Internal Server Exception)}
+     */
+    @ExceptionHandler(InternalServerException.class)
+    protected ResponseEntity<Object> handleInternalServerException(
+            InternalServerException ex,
+            HttpHeaders headers,
+            HttpStatus status,
+            WebRequest request) {
+        ExceptionResponse exceptionResponse =
+                new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
+        ex.printStackTrace();
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+    }
 }

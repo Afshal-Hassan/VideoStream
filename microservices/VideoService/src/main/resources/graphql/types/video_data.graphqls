@@ -1,5 +1,5 @@
 type VideoData {
-  id: Int
+  id: String
   title: String  
   url: String
   uploadedAt: String

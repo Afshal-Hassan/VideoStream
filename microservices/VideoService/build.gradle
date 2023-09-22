@@ -43,12 +43,19 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-graphql'
     implementation group: 'com.graphql-java', name: 'graphql-java', version: '20.2'
     implementation group: 'joda-time', name: 'joda-time', version: '2.10.11'
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+    implementation group: 'dev.miku', name: 'r2dbc-mysql', version: '0.8.2.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation group: 'redis.clients', name: 'jedis', version: '4.2.3'
+
 
 
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
 
 
     compileOnly 'org.projectlombok:lombok'

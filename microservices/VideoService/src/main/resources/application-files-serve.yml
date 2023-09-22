@@ -1,0 +1,18 @@
+spring:
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+
+  web:
+    resources:
+      static-locations: file:C:/YoutubeClone/videos
+
+
+videos:
+  path: static/videos
+
+
+directory:
+  path: C:/YoutubeClone/videos

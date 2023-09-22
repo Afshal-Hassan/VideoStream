@@ -3,6 +3,8 @@ package com.youtube.VideoService.services;
 
 import java.io.IOException;
 
+import com.youtube.VideoService.cache.CacheProcessor;
+import com.youtube.VideoService.entities.Video;
 import com.youtube.VideoService.exceptions.NotFoundException;
 import com.youtube.VideoService.payloads.graphql_domains.outputs.VideoData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,26 +30,29 @@ public class VideoServiceClient implements VideoService {
     private VideoProcessor videoProcessor;
 
 
+    @Autowired
+    private CacheProcessor cacheProcessor;
+
+
     @Override
     public Mono<VideoData> saveVideo(Mono<VideoDataInput> input) {
         return input
                 .map(VideoMapper::mapToEntity)
-                .flatMap(entity -> repo.save(entity))
+                .doOnNext(video -> cacheProcessor.addToCache(video.getId(), video))
                 .flatMap(video -> Mono.just(VideoMapper.mapToData(video)));
     }
 
 
     @Override
-    public String uploadFile(Long videoId, MultipartFile file) throws IOException {
-        repo
-                .findById(videoId)
-                .switchIfEmpty(
-                        Mono.error(new NotFoundException("Video not found by id: " + videoId))
-                );
+    public Mono<String> uploadFile(String videoId, MultipartFile file) throws IOException {
+        Video video = cacheProcessor.getFromCache(videoId);
+        if (video == null) {
+            Mono.error(new NotFoundException("Video not found by id: " + videoId));
+        }
 
         String fileName = videoProcessor.uploadVideo(file);
-        repo.updateFileNameOfVideoById(videoId, fileName);
-        return fileName;
+        cacheProcessor.updateFilenameFromCacheById(videoId, fileName);
+        return Mono.just(fileName);
     }
 
 
