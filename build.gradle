@@ -1,0 +1,53 @@
+plugins {
+    id 'java' 
+    id "org.sonarqube" version "4.3.1.3277"
+}
+
+
+sonar {
+    properties {
+        property "sonar.projectKey", "Afshal-Hassan_VideoStream"
+        property "sonar.organization", "afshal1"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
+
+group = 'com.youtube'
+version = '0.0.1-SNAPSHOT'
+
+
+
+
+java {
+    sourceCompatibility = '17'
+}
+
+
+
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+
+
+
+repositories {
+    mavenCentral()
+}
+
+ 
+
+
+dependencies { 
+}
+
+ 
+ 
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

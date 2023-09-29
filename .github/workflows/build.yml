@@ -62,9 +62,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.USER_SERVICE_SONAR_TOKEN }}
         run: |
           cd microservices/UserService
-          ./gradlew clean build sonar \
+          ./mvnw clean verify sonar:sonar \
             -Dsonar.organization=afshal1 \
             -Dsonar.projectKey=afshal1_user-service \
             -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.token=$SONAR_TOKEN \
-            -x test
+            -Dsonar.login=$SONAR_TOKEN
