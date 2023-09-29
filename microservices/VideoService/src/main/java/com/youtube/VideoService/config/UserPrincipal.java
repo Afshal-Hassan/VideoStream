@@ -8,13 +8,13 @@ import java.util.Collection;
 import java.util.Objects;
 
 
-public final class CustomUserDetails implements UserDetails {
+public final class UserPrincipal implements UserDetails {
 
 
     private final UserData userData;
 
 
-    public CustomUserDetails(UserData userData) {
+    public UserPrincipal(UserData userData) {
         this.userData = userData;
     }
 

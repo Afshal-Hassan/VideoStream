@@ -19,4 +19,10 @@ public class TestController {
     public Cache getCache(@PathVariable("name") String name) {
         return cacheManager.getCache(name);
     }
+
+
+    @GetMapping("/test")
+    public void getTest() {
+        System.out.println("tested");
+    }
 }
