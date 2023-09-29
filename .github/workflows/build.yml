@@ -59,11 +59,5 @@ jobs:
       - name: Build and analyze user service
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.USER_SERVICE_SONAR_TOKEN }}
-        run: |
-          cd microservices/UserService
-          ./mvnw clean verify sonar:sonar \
-            -Dsonar.organization=afshal1 \
-            -Dsonar.projectKey=afshal1_user-service \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=$SONAR_TOKEN
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: ./gradlew build sonar --info
