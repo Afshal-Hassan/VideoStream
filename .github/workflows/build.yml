@@ -11,7 +11,7 @@ jobs:
 
 
 
-    name: Build and analyze
+    name: CI SonarCloud Analysis 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -50,13 +50,13 @@ jobs:
 
 
 
-      - name: Make gradlew executable in user service
+      - name: Make gradlew executable
         run: chmod +x microservices/UserService/gradlew
 
 
 
 
-      - name: Build and analyze user service
+      - name: Build and analyze 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
