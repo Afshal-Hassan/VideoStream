@@ -66,5 +66,5 @@ jobs:
             -Dsonar.organization=afshal1 \
             -Dsonar.projectKey=afshal1_user-service \
             -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=$SONAR_TOKEN \
+            -Dsonar.token=$SONAR_TOKEN \
             -x test
