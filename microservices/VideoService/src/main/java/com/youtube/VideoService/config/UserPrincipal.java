@@ -1,11 +1,12 @@
-package com.youtube.auth.service.AuthService.entities;
+package com.youtube.VideoService.config;
 
-import com.youtube.auth.service.AuthService.payloads.UserData;
+import com.youtube.VideoService.payloads.rest_domains.inputs.UserData;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Objects;
+
 
 public final class CustomUserDetails implements UserDetails {
 
