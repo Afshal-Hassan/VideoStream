@@ -1,9 +1,10 @@
 package com.youtube.VideoService.web;
 
 
-import java.io.IOException;
-
-
+import com.youtube.VideoService.payloads.global_domains.GenericResponse;
+import com.youtube.VideoService.payloads.graphql_domains.inputs.VideoDataInput;
+import com.youtube.VideoService.services.VideoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -12,11 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import com.youtube.VideoService.services.VideoService;
-import jakarta.validation.Valid;
-import com.youtube.VideoService.payloads.global_domains.GenericResponse;
-import com.youtube.VideoService.payloads.graphql_domains.inputs.VideoDataInput;
 import reactor.core.publisher.Mono;
+
+import java.io.IOException;
 
 
 @RestController

@@ -1,6 +1,7 @@
 package com.youtube.VideoService.exceptions;
 
 
+import com.youtube.VideoService.payloads.global_domains.ExceptionResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -13,8 +14,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
-import com.youtube.VideoService.payloads.global_domains.ExceptionResponse;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -176,5 +175,27 @@ public class ExceptionResponseHandler extends ResponseEntityExceptionHandler {
                 new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
         ex.printStackTrace();
         return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+    }
+
+
+    /**
+     * {@code Rest Controller Exception } : Handle internal server exception.
+     *
+     * @param ex      to handle exception, with type {@link UnauthorizedException} ,
+     * @param headers to handle http headers, with type {@link HttpHeaders},
+     * @param status  to handle http status code, with type {@link HttpStatusCode}
+     * @param request to handle web request, with type {@link WebRequest} ,
+     * @return the {@link ResponseEntity}, with the Http status {@code 403 (Forbidden)}
+     */
+    @ExceptionHandler(UnauthorizedException.class)
+    protected ResponseEntity<Object> handleUnauthorizedException(
+            UnauthorizedException ex,
+            HttpHeaders headers,
+            HttpStatus status,
+            WebRequest request) {
+        ExceptionResponse exceptionResponse =
+                new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
+        ex.printStackTrace();
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.UNAUTHORIZED);
     }
 }
