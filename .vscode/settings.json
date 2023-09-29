@@ -1,4 +1,5 @@
 {
-    "editor.fontFamily": "Menlo",
-    "editor.fontSize": 15
+  "editor.fontFamily": "Menlo",
+  "editor.fontSize": 15,
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
