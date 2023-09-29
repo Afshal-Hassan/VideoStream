@@ -2,9 +2,12 @@ package com.youtube.VideoService.services;
 
 
 import java.io.IOException;
+import java.util.Map;
 
 import com.youtube.VideoService.cache.CacheProcessor;
 import com.youtube.VideoService.entities.Video;
+import com.youtube.VideoService.enums.Search;
+import com.youtube.VideoService.exceptions.BadRequestException;
 import com.youtube.VideoService.exceptions.NotFoundException;
 import com.youtube.VideoService.payloads.graphql_domains.outputs.VideoData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,7 @@ import com.youtube.VideoService.mappers.VideoMapper;
 import com.youtube.VideoService.payloads.graphql_domains.inputs.VideoDataInput;
 import com.youtube.VideoService.repos.VideoRepo;
 import com.youtube.VideoService.utils.VideoProcessor;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 
@@ -59,5 +63,24 @@ public class VideoServiceClient implements VideoService {
     @Override
     public Mono<Resource> streamVideo(String fileName) {
         return videoProcessor.loadVideo(fileName);
+    }
+
+
+    @Override
+    public Flux<VideoData> getAllVideos(String searchType, String title) {
+        if (Search.isBySearch(searchType)) {
+
+            return repo.findVideosByTitle(title)
+                    .map(video -> VideoMapper.mapToData(video));
+
+        } else if (Search.isAll(searchType)) {
+
+            Map<String, Video> allVideosFromCache = cacheProcessor.getAllVideosFromCache();
+            return Flux.fromIterable(allVideosFromCache.values())
+                    .map(video -> VideoMapper.mapToData(video));
+
+        } else {
+            throw new BadRequestException("Invalid search type");
+        }
     }
 }

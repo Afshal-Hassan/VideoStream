@@ -8,6 +8,9 @@ import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 @Component
 public class CacheProcessor {
@@ -62,5 +65,33 @@ public class CacheProcessor {
             video.setFileName(fileName);
             cache.put(cacheKey, video);
         }
+    }
+
+
+    public Map<String, Video> getAllVideosFromCache() {
+        Cache cache = cacheManager.getCache(AppConstants.CACHE_NAME);
+
+
+        if (cache == null) {
+            throw new InternalServerException("Cache not found by name: " + AppConstants.CACHE_NAME);
+        }
+
+
+        Map<String, Video> allItems = new HashMap<>();
+
+
+        for (String cacheKey : cacheManager.getCacheNames()) {
+            Cache.ValueWrapper valueWrapper = cache.get(cacheKey);
+
+            if (valueWrapper != null) {
+                Object cachedValue = valueWrapper.get();
+
+                if (cachedValue instanceof Video) {
+                    allItems.put(cacheKey, (Video) cachedValue);
+                }
+            }
+        }
+
+        return allItems;
     }
 }
