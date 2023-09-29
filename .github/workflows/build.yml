@@ -50,7 +50,7 @@ jobs:
 
 
 
-      - name: Make gradlew executable
+      - name: Make gradlew executable in user service
         run: chmod +x microservices/UserService/gradlew
 
 
@@ -60,4 +60,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.USER_SERVICE_SONAR_TOKEN }}
-        run: microservices/UserService/gradlew build sonar --info
+        run: |
+          cd microservices/UserService
+          ./mvnw clean verify sonar:sonar \
+            -Dsonar.organization=afshal1 \
+            -Dsonar.projectKey=afshal1_user-service \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=$SONAR_TOKEN
