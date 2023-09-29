@@ -1,4 +1,4 @@
-name: SonarCloud
+name: SonarCloud Analysis
 on:
   push:
     branches:
@@ -10,7 +10,7 @@ jobs:
 
 
 
-  
+
     name: Build and analyze
     runs-on: ubuntu-latest
     steps:
