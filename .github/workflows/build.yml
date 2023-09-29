@@ -1,4 +1,4 @@
-name: SonarCloud Analysis
+name: CI
 on:
   push:
     branches:
@@ -11,7 +11,7 @@ jobs:
 
 
 
-    name: CI SonarCloud Analysis 
+    name: SonarCloud Analysis 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -51,7 +51,7 @@ jobs:
 
 
       - name: Make gradlew executable
-        run: chmod +x microservices/UserService/gradlew
+        run: chmod +x ./gradlew
 
 
 
