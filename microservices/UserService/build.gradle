@@ -8,7 +8,7 @@ plugins {
 
 sonar {
     properties {
-        property "sonar.projectKey", "Afshal-Hassan_VideoStream"
+        property "sonar.projectKey", "afshal1_user-service"
         property "sonar.organization", "afshal1"
         property "sonar.host.url", "https://sonarcloud.io"
     }
