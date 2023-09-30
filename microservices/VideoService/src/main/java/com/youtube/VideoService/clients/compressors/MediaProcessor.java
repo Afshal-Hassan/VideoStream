@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 
-public interface FileCompressor {
+public interface MediaProcessor {
 
 
     void saveVideoQuality(File originalVideo, File outputVideo, Integer width, Integer height) throws IOException;
