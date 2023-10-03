@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:paddingLeft="8dp"
+             android:paddingRight="15dp"
+             tools:context=".Header">
+
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+        <ImageView
+                android:id="@+id/headerYoutubeLogo"
+                android:layout_width="@dimen/_40dp"
+                android:layout_height="@dimen/_40dp"
+                android:src="@drawable/youtube"/>
+
+
+        <TextView
+                android:id="@+id/headerYoutubeLogoHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YouTube"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20dp"
+                android:textFontWeight="600"
+                android:fontFamily="@font/youtubesansmedium"
+                android:layout_toRightOf="@id/headerYoutubeLogo"
+                android:layout_centerVertical="true"/>
+
+
+        <ImageView
+                android:id="@+id/headerNotificationImage"
+                android:layout_width="@dimen/_25dp"
+                android:layout_height="@dimen/_25dp"
+                android:src="@drawable/notifications"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/headerSearchImage"
+                android:layout_centerVertical="true"/>
+
+
+        <ImageView
+                android:id="@+id/headerSearchImage"
+                android:layout_width="@dimen/_25dp"
+                android:layout_height="@dimen/_25dp"
+                android:src="@drawable/search"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
