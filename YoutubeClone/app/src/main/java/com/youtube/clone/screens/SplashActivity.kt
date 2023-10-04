@@ -39,7 +39,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun openSplashScreen() {
         Handler(Looper.getMainLooper()).postDelayed({
-            provider.getActivities(Activities.LoginActivity).navigate(this@SplashActivity)
+            provider.getActivities(Activities.DashboardActivity).navigate(this@SplashActivity)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             finish()
         }, 3000)
