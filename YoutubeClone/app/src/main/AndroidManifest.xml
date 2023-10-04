@@ -32,6 +32,9 @@
 
         <activity android:name="com.youtube.login.screens.LoginActivity"
                   android:screenOrientation="portrait"/>
+
+
+        <activity android:name="com.youtube.dashboard.screens.Dashboard"/>
     </application>
 
 </manifest>
