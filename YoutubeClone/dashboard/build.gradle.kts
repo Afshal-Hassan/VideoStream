@@ -53,6 +53,12 @@ dependencies {
 
 
 
+
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
+
+
+
     implementation(DaggerHilt.hilt)
     kapt(DaggerHilt.hiltAndroidCompiler)
     kapt(DaggerHilt.hiltCompiler)

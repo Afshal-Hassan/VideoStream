@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:background="@color/white"
+             tools:context=".fragments.Video">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        <VideoView
+                android:id="@+id/video"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200dp"/>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="@dimen/_25dp">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/_25dp"
+                    android:layout_height="@dimen/_25dp"
+                    android:src="@drawable/apple"
+                    android:layout_marginTop="20dp"/>
+
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="18dp">
+
+
+                <TextView
+                        android:id="@+id/videoTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Here is our new video titile and we are lucky!"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15dp"
+                        android:fontFamily="@font/youtubesansmedium"/>
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/videoTitle"
+                        android:layout_marginTop="5dp">
+
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Iron Man Lifestyle"
+                            android:textSize="@dimen/_11dp"
+                            android:textColor="@color/lightgray"
+                            android:fontFamily="@font/youtubesansmedium"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1 year ago"
+                            android:textSize="@dimen/_11dp"
+                            android:textColor="@color/lightgray"
+                            android:fontFamily="@font/youtubesansmedium"
+                            android:layout_marginLeft="20dp"/>
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

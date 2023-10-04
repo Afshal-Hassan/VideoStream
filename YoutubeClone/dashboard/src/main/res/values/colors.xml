@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="youtube_red">#e52d27</color>
     <color name="youtube_dark_red">#b31217</color>
+    <color name="lightgray">#808080</color>
 </resources>

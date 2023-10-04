@@ -3,7 +3,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:paddingLeft="12dp"
+             android:paddingLeft="18dp"
              android:paddingRight="15dp"
              tools:context=".Header">
 
@@ -14,9 +14,10 @@
 
         <ImageView
                 android:id="@+id/headerYoutubeLogo"
-                android:layout_width="@dimen/_30dp"
-                android:layout_height="@dimen/_30dp"
-                android:src="@drawable/youtube"/>
+                android:layout_width="@dimen/_25dp"
+                android:layout_height="@dimen/_25dp"
+                android:src="@drawable/youtube"
+                android:layout_marginTop="3dp"/>
 
 
         <TextView
@@ -25,18 +26,18 @@
                 android:layout_height="wrap_content"
                 android:text="YouTube"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_20dp"
-                android:textFontWeight="600"
+                android:textSize="@dimen/_19dp"
                 android:fontFamily="@font/youtubesansmedium"
-                android:layout_marginLeft="8dp"
+                android:textFontWeight="600"
+                android:layout_marginLeft="6dp"
                 android:layout_toRightOf="@id/headerYoutubeLogo"
                 android:layout_centerVertical="true"/>
 
 
         <ImageView
                 android:id="@+id/headerNotificationImage"
-                android:layout_width="@dimen/_25dp"
-                android:layout_height="@dimen/_25dp"
+                android:layout_width="@dimen/_22dp"
+                android:layout_height="@dimen/_22dp"
                 android:src="@drawable/notifications"
                 android:layout_marginRight="15dp"
                 android:layout_toLeftOf="@+id/headerSearchImage"
@@ -45,8 +46,8 @@
 
         <ImageView
                 android:id="@+id/headerSearchImage"
-                android:layout_width="@dimen/_25dp"
-                android:layout_height="@dimen/_25dp"
+                android:layout_width="@dimen/_22dp"
+                android:layout_height="@dimen/_22dp"
                 android:src="@drawable/search"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"/>

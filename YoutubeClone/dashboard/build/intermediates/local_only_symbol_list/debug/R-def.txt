@@ -1,6 +1,7 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color lightgray
 color purple_200
 color purple_500
 color purple_700
@@ -9,5 +10,13 @@ color teal_700
 color white
 color youtube_dark_red
 color youtube_red
+drawable apple
+drawable pic
 id header
+id video
+id videoFragment
+id videoTitle
 layout activity_dashboard
+layout fragment_video
+string hello_blank_fragment
+style circular
