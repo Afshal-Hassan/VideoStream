@@ -1,11 +1,10 @@
 package com.youtube.clone.screens
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
 import com.youtube.clone.R
 import com.youtube.clone.databinding.ActivitySplashBinding
 import com.youtube.common_utils.Activities
