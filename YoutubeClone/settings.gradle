@@ -16,3 +16,4 @@ rootProject.name = "Youtube Clone"
 include ':app'
 include ':login'
 include ':common:common_utils'
+include ':dashboard'

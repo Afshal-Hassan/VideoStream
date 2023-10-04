@@ -1,6 +1,4 @@
 
-g
-7login/src/main/java/com/youtube/login/TokenConstants.kt,e\4\e484dcc7a22ba2cb3722ee0f79c97e460d11c96d
 u
 Elogin/src/main/java/com/youtube/login/navigation/GoToLoginActivity.kt,6\4\64fceeda34d678787d960c5164d45d4c43c83999
 <
@@ -49,3 +47,17 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 F
 login/build.gradle.kts,7\b\7b21eb758a0884708a4f3b39940a10a208e3b25c
+t
+Dcommon/common_utils/src/main/java/com/youtube/common_utils/Header.kt,f\d\fddf7d3b552b960ad62b8628019521af90bd27ca
+k
+;common/common_utils/src/main/res/layout/fragment_header.xml,6\7\67ca910e3757b99f0f37ec09e43b37c4abad2b16
+J
+dashboard/build.gradle.kts,e\e\ee93987db0b708dab41bc7480d1b242757d77b9d
+T
+$common/common_utils/build.gradle.kts,d\7\d708ac0ce60e21065e3e2eba38b8349b5ea38063
+r
+Bdashboard/src/main/java/com/youtube/dashboard/screens/Dashboard.kt,e\2\e29dbcaba585baa861857bc83a77665a17827c0e
+
+Qdashboard/src/main/java/com/youtube/dashboard/navigation/GoToDashboardActivity.kt,e\5\e5913059a70ed2200c4fc2f52934a63c4905a375
+d
+4dashboard/src/main/res/layout/activity_dashboard.xml,d\e\de80743cd7cdbf84bf97a23c92ceeb6dcec61b32
