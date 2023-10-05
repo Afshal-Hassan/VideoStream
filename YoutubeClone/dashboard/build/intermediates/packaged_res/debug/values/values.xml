@@ -8,7 +8,9 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="youtube_black">#0F0F0F</color>
     <color name="youtube_dark_red">#b31217</color>
+    <color name="youtube_gray">#414141</color>
     <color name="youtube_red">#e52d27</color>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <style name="circular">

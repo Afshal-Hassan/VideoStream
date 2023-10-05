@@ -10,4 +10,6 @@
     <color name="youtube_red">#e52d27</color>
     <color name="youtube_dark_red">#b31217</color>
     <color name="lightgray">#808080</color>
+    <color name="youtube_black">#0F0F0F</color>
+    <color name="youtube_gray">#414141</color>
 </resources>

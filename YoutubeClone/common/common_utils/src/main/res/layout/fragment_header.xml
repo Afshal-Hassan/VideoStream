@@ -25,11 +25,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="YouTube"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_19dp"
-                android:fontFamily="@font/youtubesansmedium"
-                android:textFontWeight="600"
-                android:layout_marginLeft="6dp"
+                android:textColor="@color/youtube_black"
+                android:textSize="@dimen/_17dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/robotocondensedbold"
+                android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/headerYoutubeLogo"
                 android:layout_centerVertical="true"/>
 

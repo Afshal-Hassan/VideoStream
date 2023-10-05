@@ -7,10 +7,17 @@ color purple_700
 color teal_200
 color teal_700
 color white
+color youtube_black
 color youtube_dark_red
+color youtube_gray
 color youtube_red
 drawable apple
 drawable pic
+font robotobold
+font robotocondensedbold
+font robotolight
+font robotomedium
+font robotoregular
 id header
 id video
 id videoFragment
