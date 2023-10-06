@@ -1,2 +1,11 @@
-package com.youtube.VideoService.config;public class AspectConfig {
+package com.youtube.VideoService.config;
+
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+
+
+@Configuration
+@EnableAspectJAutoProxy
+public class AspectConfig {
 }

@@ -25,6 +25,12 @@ spring:
             - Path=/api/auth/**,/check
 
 
+        - id: VIDEO-SERVICE
+          uri: lb://VIDEO-SERVICE
+          predicates:
+            - Path=/api/video/**
+
+
 
 
 

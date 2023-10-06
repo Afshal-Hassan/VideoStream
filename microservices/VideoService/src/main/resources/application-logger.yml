@@ -1,0 +1,7 @@
+logging:
+  level:
+    com:
+      youtube:
+        VideoService:
+          aspects:
+            LoggerAspect: debug

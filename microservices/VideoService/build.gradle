@@ -57,12 +57,14 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
-
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '3.1.2'
 
 
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.mysql:mysql-connector-j'
+    runtimeOnly group: 'org.aspectj', name: 'aspectjrt', version: '1.9.6'
+    runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.6'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -81,3 +83,9 @@ dependencyManagement {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+
+bootBuildImage {
+    imageName = "afshalhassan/video-service-youtube"
+}
+

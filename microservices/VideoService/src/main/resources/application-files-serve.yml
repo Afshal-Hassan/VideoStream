@@ -7,7 +7,7 @@ spring:
 
   web:
     resources:
-      static-locations: file:C:/YoutubeClone/videos
+      static-locations: file:${FILES_DIR_PATH:C:/YoutubeClone/videos}
 
 
 videos:
@@ -15,4 +15,4 @@ videos:
 
 
 directory:
-  path: C:/YoutubeClone/videos
+  path: ${FILES_DIR_PATH:C:/YoutubeClone/videos}
