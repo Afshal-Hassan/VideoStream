@@ -1,5 +1,4 @@
 spring:
-
   servlet:
     multipart:
       enabled: true
@@ -9,10 +8,8 @@ spring:
     resources:
       static-locations: file:${FILES_DIR_PATH:C:/YoutubeClone/videos}
 
-
 videos:
   path: static/videos
-
 
 directory:
   path: ${FILES_DIR_PATH:C:/YoutubeClone/videos}

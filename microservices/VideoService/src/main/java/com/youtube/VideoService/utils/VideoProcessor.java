@@ -1,19 +1,18 @@
 package com.youtube.VideoService.utils;
 
+import com.youtube.VideoService.clients.compressors.MediaProcessor;
 import com.youtube.VideoService.exceptions.BadRequestException;
+import com.youtube.VideoService.services.FileProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.beans.factory.annotation.Value;
 import reactor.core.publisher.Mono;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
-import java.nio.file.Files;
-import java.util.UUID;
 
 
 @Component
@@ -32,6 +31,10 @@ public class VideoProcessor {
     private ResourceLoader resourceLoader;
 
 
+    @Autowired
+    private MediaProcessor mediaProcessor;
+
+
     /**
      * {@code Upload File } : upload video.
      *
@@ -48,23 +51,18 @@ public class VideoProcessor {
             throw new BadRequestException("file should be of mp4 or video file");
         }
 
-        String originalFilename = file.getOriginalFilename();
 
-        String randomUUID = UUID.randomUUID().toString();
-        String fileName = randomUUID.concat(originalFilename.substring(originalFilename.lastIndexOf(".")));
-        String filePath = directoryPath + File.separator + fileName;
+        File outputVideo = FileProcessor.createFile("output_compressed.mp4");
 
-
-        File f = new File(directoryPath);
+        File originalVideo = FileProcessor.convertMultipartFileToFile(directoryPath, file);
 
 
-        if (!f.exists()) {
-            f.mkdir();
-        }
+        mediaProcessor.saveVideoQuality(originalVideo, outputVideo, 1280, 720);
 
 
-        Files.copy(file.getInputStream(), Paths.get(filePath));
-        return fileName;
+        originalVideo.delete();
+
+        return outputVideo.getName();
     }
 
 
