@@ -16,3 +16,7 @@ videos:
 
 directory:
   path: C:/YoutubeClone/videos
+
+
+ffmpeg:
+  path: C:/FFmpeg/ffmpeg-master-latest-win64-gpl/bin
