@@ -3,6 +3,7 @@ package com.youtube.VideoService.web;
 
 import com.youtube.VideoService.payloads.global_domains.GenericResponse;
 import com.youtube.VideoService.payloads.graphql_domains.inputs.VideoDataInput;
+import com.youtube.VideoService.payloads.graphql_domains.outputs.VideoData;
 import com.youtube.VideoService.services.VideoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.io.IOException;
@@ -73,6 +75,27 @@ public class VideoController {
     @GetMapping("/stream/{fileName}")
     public Mono<Resource> streamVideo(@PathVariable("fileName") String fileName) {
         return videoService.streamVideo(fileName);
+    }
+
+
+    /**
+     * {@code GET for all videos } : to get all videos.
+     *
+     * @param searchType to find video by searchType ( either all or by search ),
+     *                   with type {@link String} ,
+     * @param title      to find video by it's title if searchType is by search ,
+     *                   with type {@link String} ,
+     * @return the flux,  {@link Flux} with the generic response {@link GenericResponse},
+     * with the Https status {@code 200 (Ok)}.  ,
+     */
+    @GetMapping("/get/{searchType}/{title}")
+    public Flux getAllVideos(@PathVariable("searchType") String searchType, @PathVariable("title") String title) {
+        return videoService.getAllVideos(searchType, title)
+                .map(result ->
+                        new GenericResponse("List of all videos by search type: " + searchType,
+                                result
+                        )
+                );
     }
 
 }
