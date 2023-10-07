@@ -29,7 +29,7 @@ public class FFmpegService implements MediaProcessor {
                 .done();
 
 
-        FFmpegExecutor executor = new FFmpegExecutor(new FFmpeg(ffmpegPath));
+        FFmpegExecutor executor = new FFmpegExecutor(new FFmpeg(ffmpegPath + "/ffmpeg"));
         executor.createJob(builder).run();
     }
 }

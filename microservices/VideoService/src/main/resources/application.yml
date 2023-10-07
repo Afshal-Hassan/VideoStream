@@ -34,4 +34,4 @@ spring:
 
 
   profiles:
-    active: eureka,files-serve,graphql,logger
+    active: eureka,files-serve,graphql,redis,logger

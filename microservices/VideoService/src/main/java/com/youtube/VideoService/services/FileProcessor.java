@@ -13,8 +13,8 @@ import java.io.IOException;
 public class FileProcessor {
 
 
-    public static File createFile(String filename) {
-        return new File(filename);
+    public static File createFile(String directoryPath, String filename) {
+        return new File(directoryPath, filename);
     }
 
 

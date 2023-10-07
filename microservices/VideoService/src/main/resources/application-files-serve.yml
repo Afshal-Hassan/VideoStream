@@ -8,8 +8,14 @@ spring:
     resources:
       static-locations: file:${FILES_DIR_PATH:C:/YoutubeClone/videos}
 
+
 videos:
   path: static/videos
 
+
 directory:
   path: ${FILES_DIR_PATH:C:/YoutubeClone/videos}
+
+
+ffmpeg:
+  path: ${FFMPEG_EXE_PATH:C:/FFmpeg}

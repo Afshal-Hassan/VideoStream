@@ -6,6 +6,7 @@ import com.youtube.VideoService.payloads.graphql_domains.outputs.VideoData;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -37,7 +38,7 @@ public class VideoMapperTest {
         LocalDateTime uploadedAt = LocalDateTime.now();
         Long uploaderId = 1L;
         Video video = new Video();
-        video.setId(id);
+        video.setId(UUID.randomUUID().toString());
         video.setTitle(title);
         video.setFileName(fileName);
         video.setUploadedAt(uploadedAt);

@@ -24,6 +24,7 @@ public class LoggerAspect {
     public void loggingBeforeAnyRequest(JoinPoint joinPoint) {
         Mono<VideoDataInput> input = (Mono) joinPoint.getArgs()[0];
 
+
         input.subscribe
                 (
                         value -> LOG.debug("GraphQL request to save video details : {}", value)

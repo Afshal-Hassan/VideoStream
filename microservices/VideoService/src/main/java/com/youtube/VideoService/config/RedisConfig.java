@@ -1,5 +1,7 @@
 package com.youtube.VideoService.config;
 
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
@@ -15,11 +17,19 @@ import redis.clients.jedis.JedisPoolConfig;
 public class RedisConfig {
 
 
+    @Value("${redis.host}")
+    public String hostName;
+
+
+    @Value("${redis.port}")
+    public Integer port;
+
+
     @Bean
     public JedisConnectionFactory jedisConnectionFactory() {
         RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration();
-        configuration.setHostName("redis");
-        configuration.setPort(6379);
+        configuration.setHostName(hostName);
+        configuration.setPort(port);
 
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory(configuration);
 

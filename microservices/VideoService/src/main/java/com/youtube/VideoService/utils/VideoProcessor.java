@@ -52,7 +52,7 @@ public class VideoProcessor {
         }
 
 
-        File outputVideo = FileProcessor.createFile("output_compressed.mp4");
+        File outputVideo = FileProcessor.createFile(directoryPath, "output_compressed.mp4");
 
         File originalVideo = FileProcessor.convertMultipartFileToFile(directoryPath, file);
 

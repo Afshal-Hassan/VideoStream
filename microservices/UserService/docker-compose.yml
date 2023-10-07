@@ -16,7 +16,7 @@ services:
       MYSQL_DATABASE: user
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./data:/var/lib/mysql
+      - ./mysql_data:/var/lib/mysql
     ports:
       - "3307:3306"
     networks:
@@ -27,7 +27,7 @@ services:
     container_name: redis
     restart: always
     volumes:
-      - ./data:/var/lib/redis
+      - ./redis_data:/var/lib/redis
     ports:
       - "6379:6379"
     networks:
@@ -38,11 +38,20 @@ services:
     container_name: redis_insight
     restart: always
     volumes:
-      - ./data:/var/lib/redisinsight
+      - ./redis_data:/var/lib/redisinsight
     ports:
       - "9001:9001"
     networks:
       - backend
+
+  # ffmpeg-service:
+  #   image: alpine:latest
+  #   container_name: ffmpeg-service
+  #   command: sh -c "apk add --no-cache ffmpeg && sleep infinity"
+  #   volumes:
+  #     - ./ffmpeg_data:/usr/bin
+  #   networks:
+  #     - backend
 
   api-gateway:
     image: afshalhassan/api-gateway-youtube:latest
@@ -97,9 +106,12 @@ services:
       - EUREKA_INSTANCE_PREFER-IP-ADDRESS=true
       - EUREKA_CLIENT_REGISTER-WITH-EUREKA=true
       - EUREKA_CLIENT_FETCH-REGISTRY=true
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
       - FILES_DIR_PATH=/home/app/uploads/videos
+      - FFMPEG_EXE_PATH=/usr/bin
     volumes:
-      - ./data:/home/app/uploads/videos
+      - ./videos:/home/app/uploads/videos
     networks:
       - backend
     depends_on:
@@ -110,3 +122,5 @@ services:
 networks:
   backend:
     driver: bridge
+# volumes:
+#   ffmpeg-data:
