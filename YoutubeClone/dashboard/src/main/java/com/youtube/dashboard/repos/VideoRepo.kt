@@ -1,4 +1,13 @@
 package com.youtube.dashboard.repos
 
-class VideoRepo {
+import com.youtube.dashboard.services.VideoService
+import javax.inject.Inject
+
+class VideoRepo @Inject constructor(private val videoService: VideoService) {
+
+
+    suspend fun getAllVideos() {
+
+    }
+
 }
