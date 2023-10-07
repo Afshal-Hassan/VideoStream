@@ -2,7 +2,6 @@ package com.youtube.dashboard.livedata
 
 import androidx.lifecycle.MutableLiveData
 import com.youtube.dashboard.pojos.VideoResponse
-import com.youtube.dashboard.pojos.VideoResponseData
 import com.youtube.login.utils.NetworkResult
 
 class VideoLiveData {
