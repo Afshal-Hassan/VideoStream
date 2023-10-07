@@ -1,5 +1,6 @@
 package com.youtube.dashboard.config
 
+import com.youtube.dashboard.services.VideoService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,5 +26,12 @@ object CustomRetrofit {
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+    }
+
+
+    @Singleton
+    @Provides
+    fun providesVideoService(retrofit: Retrofit): VideoService {
+        return retrofit.create(VideoService::class.java)
     }
 }
