@@ -44,6 +44,8 @@ dependencies {
     implementation(Deps.constraintLayout)
     implementation(Retrofit.retrofit)
     implementation(Retrofit.gsonConvertor)
+    implementation(GraphQl.apolloGraphql)
+    implementation(GraphQl.apolloCoroutines)
     implementation(Coroutines.coroutineCore)
     implementation(Coroutines.coroutineAndroid)
     implementation(CoroutinesLifecycleScope.lifecycleViewModel)

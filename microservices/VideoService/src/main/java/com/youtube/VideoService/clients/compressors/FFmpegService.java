@@ -20,12 +20,13 @@ public class FFmpegService implements MediaProcessor {
 
 
     @Override
-    public void saveVideoQuality(File originalVideo, File outputVideo, Integer width, Integer height) throws IOException {
+    public void saveVideoQuality(File originalVideo, File outputVideo, Integer width, Integer height, int bitRate) throws IOException {
         FFmpegBuilder builder = new FFmpegBuilder()
                 .setInput(originalVideo.getAbsolutePath())
                 .addOutput(outputVideo.getAbsolutePath())
                 .setVideoCodec("libx264")
                 .setVideoResolution(width, height)
+                .setVideoBitRate(bitRate)
                 .done();
 
 

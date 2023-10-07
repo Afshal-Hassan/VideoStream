@@ -32,6 +32,7 @@ object Versions {
 
     const val spinKitVersion = "1.4.0"
 
+    const val apolloVersion = "2.5.7"
 
 }
 
@@ -64,6 +65,12 @@ object Retrofit {
     const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
     const val scalersConvertors =
         "com.squareup.retrofit2:converter-scalars:${Versions.scalerConvertor}"
+}
+
+
+object GraphQl {
+    const val apolloGraphql = "com.apollographql.apollo:apollo-runtime:${Versions.apolloVersion}"
+    const val apolloCoroutines = "com.apollographql.apollo:apollo-coroutines-support:${Versions.apolloVersion}"
 }
 
 object Coroutines {

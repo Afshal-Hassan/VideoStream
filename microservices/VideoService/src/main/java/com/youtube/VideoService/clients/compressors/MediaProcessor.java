@@ -7,5 +7,5 @@ import java.io.IOException;
 public interface MediaProcessor {
 
 
-    void saveVideoQuality(File originalVideo, File outputVideo, Integer width, Integer height) throws IOException;
+    void saveVideoQuality(File originalVideo, File outputVideo, Integer width, Integer height, int bitRate) throws IOException;
 }

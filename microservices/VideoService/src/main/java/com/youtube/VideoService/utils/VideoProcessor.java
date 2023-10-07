@@ -57,7 +57,7 @@ public class VideoProcessor {
         File originalVideo = FileProcessor.convertMultipartFileToFile(directoryPath, file);
 
 
-        mediaProcessor.saveVideoQuality(originalVideo, outputVideo, 1280, 720);
+        mediaProcessor.saveVideoQuality(originalVideo, outputVideo, 640, 360, 1000000);
 
 
         originalVideo.delete();
