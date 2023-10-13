@@ -81,3 +81,15 @@ w
 Gdashboard/src/main/java/com/youtube/dashboard/livedata/VideoLiveData.kt,7\8\781848494eb7807c88034004198b42645d8bc083
 t
 Ddashboard/src/main/java/com/youtube/dashboard/pojos/VideoResponse.kt,b\3\b3f989b537ebfec20959ca203bbb6610f96a0daa
+t
+Ddashboard/src/main/java/com/youtube/dashboard/utils/NetworkResult.kt,4\9\497434f628be904cb8b06b5101ce8bac5040be22
+x
+Hdashboard/src/main/java/com/youtube/dashboard/observers/VideoObserver.kt,3\7\37b6c5a13903749d16ee409c0681199ec0f20e26
+o
+?login/src/main/java/com/youtube/login/config/LoginRepoModule.kt,c\5\c5979def068e33389e64ae73b822e5bd8bf309bb
+{
+Kdashboard/src/main/java/com/youtube/dashboard/config/DashboardRepoModule.kt,6\3\635bf29459d376fcd5067929db06d04771052618
+s
+Clogin/src/main/java/com/youtube/login/config/LoginCustomRetrofit.kt,3\b\3b2f5290ebf4fd8d46cf5de718f9718c5ff78f8a
+
+Odashboard/src/main/java/com/youtube/dashboard/config/DashboardCustomRetrofit.kt,2\2\22256a42e8a701aa5d01f45a0b8f6f2ec86e5a87

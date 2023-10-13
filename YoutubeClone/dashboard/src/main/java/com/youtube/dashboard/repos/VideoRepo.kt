@@ -1,8 +1,9 @@
 package com.youtube.dashboard.repos
 
+import android.util.Log
 import com.youtube.dashboard.livedata.VideoLiveData
 import com.youtube.dashboard.services.VideoService
-import com.youtube.login.utils.NetworkResult
+import com.youtube.dashboard.utils.NetworkResult
 import org.json.JSONObject
 import javax.inject.Inject
 
@@ -17,7 +18,8 @@ class VideoRepo @Inject constructor(private val videoService: VideoService) {
 
         if (response.isSuccessful && response.body() != null) {
 
-
+            val title = response.body()!!.getData().get(0).getTitle()
+            Log.d("DATA",title)
             VideoLiveData.getVideoLiveData()
                 .postValue(NetworkResult.Success(response.body()!!.getMessage(), response.body()!!))
 

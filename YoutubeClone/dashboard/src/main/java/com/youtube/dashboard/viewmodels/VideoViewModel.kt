@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.youtube.dashboard.livedata.VideoLiveData
 import com.youtube.dashboard.pojos.VideoResponse
 import com.youtube.dashboard.repos.VideoRepo
-import com.youtube.login.utils.NetworkResult
+import com.youtube.dashboard.utils.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

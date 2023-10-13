@@ -3,6 +3,6 @@
 3    package="com.youtube.dashboard" >
 4
 5    <uses-sdk android:minSdkVersion="24" />
-5-->C:\YoutubeClone\YoutubeClone\dashboard\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest1372041685057020061.xml
+5-->C:\YoutubeClone\YoutubeClone\dashboard\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5717067973559608965.xml
 6
 7</manifest>

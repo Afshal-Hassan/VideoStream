@@ -1,4 +1,4 @@
-package com.youtube.login.utils
+package com.youtube.dashboard.utils
 
 sealed class NetworkResult<T>(val message: String? = null, val data: T? = null) {
 

@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-object RepoModule {
+object DashboardRepoModule {
 
 
     @Singleton

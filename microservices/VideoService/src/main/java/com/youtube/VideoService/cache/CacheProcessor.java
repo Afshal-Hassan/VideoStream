@@ -61,6 +61,7 @@ public class CacheProcessor {
 
 
         List<Video> videos = redisTemplate.opsForHash().values(cacheName);
+        System.out.println(videos.size());
         return videos;
     }
 }
