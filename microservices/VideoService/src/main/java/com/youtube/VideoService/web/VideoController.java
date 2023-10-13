@@ -3,7 +3,6 @@ package com.youtube.VideoService.web;
 
 import com.youtube.VideoService.payloads.global_domains.GenericResponse;
 import com.youtube.VideoService.payloads.graphql_domains.inputs.VideoDataInput;
-import com.youtube.VideoService.payloads.graphql_domains.outputs.VideoData;
 import com.youtube.VideoService.services.VideoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
