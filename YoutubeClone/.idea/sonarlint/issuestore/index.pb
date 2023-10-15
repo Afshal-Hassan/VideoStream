@@ -35,10 +35,6 @@ l
 <login/src/main/java/com/youtube/login/utils/NetworkResult.kt,d\7\d7eeccbb000cdaf025cb15d3bb106a031888de1e
 r
 Blogin/src/main/java/com/youtube/login/viewmodels/LoginViewModel.kt,6\c\6c645167326694bf1c53a1fbdbd866cb3b6c9911
-j
-:login/src/main/java/com/youtube/login/config/RepoModule.kt,1\f\1f4a6597f526cc0dfd92d4420befdf68e336b3e3
-n
->login/src/main/java/com/youtube/login/config/CustomRetrofit.kt,7\a\7a18ad42869d96df0eb368d7dfa41d36a9cc82dc
 k
 ;login/src/main/java/com/youtube/login/utils/TokenManager.kt,c\e\ce2d8b7b298a3e8ad0798aaa026f393354a14382
 n
@@ -65,10 +61,6 @@ p
 @dashboard/src/main/java/com/youtube/dashboard/fragments/Video.kt,4\8\48e62b7a3bb9f97e30ce31c2ed9e735b45007c3d
 t
 Ddashboard/src/main/java/com/youtube/dashboard/config/ApolloModule.kt,3\7\379b34207ebbd9854a185804d02a291d0fc611cd
-v
-Fdashboard/src/main/java/com/youtube/dashboard/config/CustomRetrofit.kt,7\a\7a123122f6876e5ad35c44b16c9e96318e91850f
-r
-Bdashboard/src/main/java/com/youtube/dashboard/config/RepoModule.kt,6\6\66835dfa3718a1da3faa2bcd223a2b768cd6357d
 v
 Fdashboard/src/main/java/com/youtube/dashboard/services/VideoService.kt,7\8\782c28aa551d7d59e7bfb456dddaf973dd09b8d6
 p

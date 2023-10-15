@@ -19,6 +19,7 @@ import reactor.core.publisher.Mono;
 import java.io.IOException;
 
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/video")
 @Validated

@@ -39,16 +39,6 @@ class Dashboard : AppCompatActivity() {
 
 
         videoViewModel.getAllVideos()
-    }
-
-
-    override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
-        val root = super.onCreateView(name, context, attrs)
-
-
         VideoObserver.observeVideo(this@Dashboard, binding, videoViewModel)
-
-
-        return binding.root
     }
 }

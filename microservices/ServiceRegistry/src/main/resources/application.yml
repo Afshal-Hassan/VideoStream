@@ -5,4 +5,5 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
 server:
+  address: 0.0.0.0
   port: 9000
