@@ -48,7 +48,6 @@
                         android:text="Here is our new video titile and we are lucky!"
                         android:textColor="@color/youtube_black"
                         android:textSize="@dimen/_13dp"
-                        android:textAlignment="center"
                         android:fontFamily="@font/robotomedium"/>
 
 

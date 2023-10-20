@@ -85,3 +85,5 @@ s
 Clogin/src/main/java/com/youtube/login/config/LoginCustomRetrofit.kt,3\b\3b2f5290ebf4fd8d46cf5de718f9718c5ff78f8a
 
 Odashboard/src/main/java/com/youtube/dashboard/config/DashboardCustomRetrofit.kt,2\2\22256a42e8a701aa5d01f45a0b8f6f2ec86e5a87
+A
+gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
